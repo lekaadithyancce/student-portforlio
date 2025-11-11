@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>Simple Social Page</title>
+</head>
+<body>
+<center>
+<input type="text" placeholder="Search..." style="width:200px; height:25px;">
+<button>🔍</button>
+<button><a href="file:///D:/leka/add/add1.html">⚙</button></a>
+</center>
+<hr>
+<p><a href=file:///D:/leka/add/add%202.html>G.krishnakumar</a></p>
+<center>
+<table border="0">
+<tr>
+ <td style="background-color:lightgray; width:250px; height:120px; text-align:center;">
+<img src="D:\leka\add\WhatsApp Image 2025-11-04 at 12.26.25_85b36381.jpg" width="300" height="300">
+</td>
+</tr>
+ </table>
+<p>description</p>
+<button id="likeCount" onclick="likePost()">👍Like</button>
+<button id="shareMsg" onclick="sharePost()"> ➢Share</button>
+ <button id="showBtn" onclick="showInput()">💬Comment</button>
+ <p id="output"></p>
+
+ </center>
+<hr>
+<p>👤 steph</p>
+<center>
+<table border="0">
+ <tr>
+<td style="background-color:lightgray; width:250px; height:120px; text-align:center;">
+<img src="D:\leka\add\071524a93031939370efb2e8ccff1e87.jpg" width="300" height="300">
+</td>
+</tr>
+</table>
+<p>description</p>
+<button id="likeCount1" onclick="likePost1()">👍Like </button>
+<button id="shareMsg1"onclick="sharePost1()"> ➢Share</button>
+ <button id="showBtn1" onclick="showInput1()">💬Comment</button>
+ <p id="output1"></p>
+
+</center>
+
+  <script>
+    let likes = 0;
+let likes1 = 0;
+    function likePost() {
+      likes++;
+      document.getElementById("likeCount").innerText = "Likes: " + likes;
+    }
+	function likePost1() {
+      likes1++;
+      document.getElementById("likeCount1").innerText = "Likes: " + likes1;
+    }
+
+      function showInput() {
+      document.getElementById("showBtn").style.display = "none";
+      document.getElementById("output").innerHTML = 
+        '<input type="text" id="commentInput" placeholder="Write a comment">' +
+        '<button onclick="addComment()">Post</button>';
+    }
+
+    function addComment() {
+      var comment = document.getElementById("commentInput").value;
+
+      if (comment != "") {
+        document.getElementById("output").innerHTML += "<p>" + comment + "</p>";
+        document.getElementById("commentInput").value = "";
+      }
+    }
+	function showInput1() {
+      document.getElementById("showBtn1").style.display = "none";
+      document.getElementById("output1").innerHTML = 
+        '<input type="text" id="commentInput1" placeholder="Write a comment">' +
+        '<button onclick="addComment1()">Post</button>';
+    }
+
+    function addComment1() {
+      var comment1 = document.getElementById("commentInput1").value;
+
+      if (comment1 != "") {
+        document.getElementById("output1").innerHTML += "<p>" + comment + "</p>";
+        document.getElementById("commentInput1").value = "";
+      }
+    }
+
+    function sharePost() {
+      document.getElementById("shareMsg").innerText = "Post Shared Successfully!";
+    }
+	function sharePost1() {
+      document.getElementById("shareMsg1").innerText = "Post Shared Successfully!";
+    }
+  </script>
+
+</body>
+</html>
