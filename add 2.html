@@ -16,32 +16,76 @@ linked in</a>
 <div class="section">
 <h2><u>POSTS</u></h2>
 <img src="https://www.simplilearn.com/ice9/skillupcertificates/Digital-Transformation-with-Google-cloud.png"height=100px width=200px><br>
-<button id="likeCount" onclick="likePost()">👍 Like</button>
-<button onclick="prompt('Enter your comment:')">💬 Comment</button>
-<button onclick="alert('Shared!')">↪ Share</button>
-<button onclick="alert('Reposted!')">🔄 Repost</button>
-<button style="font-size:20px;" onclick="window.location.href='file:///D:/leka/add/add3.html'">
-Show All Posts---->
-</button>
+<button onclick="showOptions()" id="editBtn">Edit Post</button>
+
+<div id="editOptions" style="display:none;">
+<button onclick="showEditBox()">Add description</button>
+<button onclick="deletePost()">Delete</button>
 </div>
+
+<div id="editBox" style="display:none;">
+<textarea id="desc" placeholder="Add description"></textarea>
+<button onclick="saveDescription()">Save</button>
+</div>
+
+<p id="description"></p>
+
+</div>
+<button id="likeCount" onclick="likePost()">👍Like</button>
+<button id="shareMsg" onclick="sharePost()">➢Share</button>
+<button id="repostMsg" onclick="repostPost()">🔁Repost</button><br>
+<div id="commentArea">
+<input type='text' id='cm' placeholder='Write comment'>
+<button onclick='addComment()'>Post</button>
+</div><br>
+<button style="font-size:20px;" onclick="window.location.href='file:///D:/leka/add/add3.html'">Show All Posts----></button>
 <script>
+let likes = 0;
+function likePost(){
+ likes++;
+ document.getElementById("likeCount").innerText = "Likes: " + likes;
+}
+function sharePost(){
+ document.getElementById("shareMsg").innerText = "Shared ✔";
+}
+function repostPost(){
+ document.getElementById("repostMsg").innerText = "Reposted ✔";
+}
+function addComment(){
+ let txt = document.getElementById("cm").value;
+ if(txt!=""){
+   document.getElementById("commentArea").innerHTML += "<p>"+txt+"</p>";
+   document.getElementById("cm").value = "";
+ }
+}
 function mouseEnter(x){
-x.style.height="150px";
-y.style.height="150px";
+ x.style.height="150px";
+ x.style.width="150px";
 }
 function mouseLeave(x){
-x.style.height="100px";
-y.style.width="100px";
+ x.style.height="50px";
+ x.style.width="50px";
 }
-let likes = 0;
-function likePost() {
-      likes++;
-      document.getElementById("likeCount").innerText = "Likes: " + likes;
-    }
+function showOptions(){
+ document.getElementById("editOptions").style.display="block";
+}
+
+function deletePost(){
+ document.getElementById("post1").style.display="none";
+}
+
+function showEditBox(){
+ document.getElementById("editBox").style.display="block";
+}
+
+function saveDescription(){
+ let text = document.getElementById("desc").value;
+ document.getElementById("description").innerText = text;
+ document.getElementById("editBox").style.display = "none";
+}
 </script>
 </body>
 </html>
-
 
 
 
