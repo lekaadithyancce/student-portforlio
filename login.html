@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>LOGIN PAGE</title>
+<script>
+function loginNow() {
+    let email = document.getElementById("email").value.trim();
+    let pass = document.getElementById("pass").value.trim();
+let savedEmail = localStorage.getItem("savedEmail");
+let savedPass = localStorage.getItem("savedPass");
+
+if (email === "" || pass === "") {
+    alert("Please fill all fields!");
+    return;
+}
+
+if (email === savedEmail && pass === savedPass) {
+    alert("Login Successful!");
+    window.location.href = "file:///D:/leka/add/add.html";
+} else {
+    alert("Incorrect Email or Password");
+}
+}
+function changeColor(element, color) {
+element.style.backgroundColor = color;
+}
+
+function resetColor(element) {
+element.style.backgroundColor = "";
+} </script>
+
+</head>
+<body align="center">
+<h2>LOGIN</h2>
+
+<label style="font-size:20px">Enter the E-mail:</label><br><br> <input type="email" id="email" placeholder="Enter your Gmail address" style="font-size:20px"><br><br>
+
+<label style="font-size:20px">Password:</label><br><br> <input type="password" id="pass" placeholder="Password" style="font-size:20px"><br><br><br>
+
+<input type="button" value="LOGIN" style="font-size:20px"
+    onclick="loginNow()"
+    onmouseenter="changeColor(this,'lightgreen')"
+    onmouseleave="resetColor(this)">
+
+</body>
+</html>
+
