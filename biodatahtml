@@ -1,63 +1,81 @@
 <html>
 <head>
+<title>BIO DATA FORM</title>
+
+<script>
+function validateForm() {
+    let inputs = document.querySelectorAll("input[type='text'], input[type='email'], input[type='date']");
+    let message = document.getElementById("msg");
+    let allFilled = true;
+
+    inputs.forEach(input => {
+        if (input.value.trim() === "") {
+            allFilled = false;
+        }
+    });
+
+    if (allFilled) {
+        message.style.color = "green";
+        message.innerHTML = "SUCCESS";
+        // Redirect only when all fields are filled
+        window.location.href = "D:/leka/add/add.html";
+    } else {
+        message.style.color = "red";
+        message.innerHTML = "Please fill all fields";
+    }
+}
+
+function changeColor(element, color) {
+    element.style.backgroundColor = color;
+}
+
+function resetColor(element) {
+    element.style.backgroundColor = "";
+}
+</script>
+
 </head>
+
 <body align="center">
 
-<img src="D:\leka\add\WhatsApp Image 2025-11-04 at 15.44.30_746ac411.jpg"height=80width=150px></br>
-<label> <H2>BIO DATA FORM</H2></label><br><br>
+<img src="D:/leka/add/WhatsApp Image 2025-11-04 at 15.44.30_746ac411.jpg" height="80" width="150"><br><br>
+
+<h2>BIO DATA FORM</h2><br>
+
 <form>
+
 <table align="center" cellpadding="8" cellspacing="5" border="0">
-<tr>
-<td><label><b>USERNAME:</b></label></td>
-<td><input type="text"></td>
-</tr>
-<tr>
-<td><label><b>FATHER NAME:</b></label></td>
-<td><input type="text"></td>
-</tr>
-<tr>
-<td><label><b>MOTHER NAME:</b></label></td>
-<td><input type="text"></td>
-</tr>
-<tr>
-<td><label><b>DATE OF BIRTH:</b></label></td>
-<td><input type="date"></td>
-</tr>
-<tr>
-<td><label><b>GENDER:</b></label></td>
-<td>
-<input type="radio" name="gender"> Male
-<input type="radio" name="gender"> Female
-</td>
-</tr>
-<tr>
-<td><label><b>DEPARTMENT:</b></label></td>
-<td><input type="text"></td>
-</tr>
-<tr>
-<td><label><b>BLOOD GROUP:</b></label></td>
-<td><input type="text"></td>
-</tr>
-<tr>
-<td><label><b>E-MAIL:</b></label></td>
-<td><input type="email"></td>
-</tr>
-<tr>
-<td><label><b>COLLEGE NAME:</b></label></td>
-<td><input type="text"></td>
-</tr>
-<tr>
-<td><label><b>PHONE NO:</b></label></td>
-<td><input type="text"></td>
-</tr>
-<tr>
-<td><label><b>AADHAR NO:</b></label></td>
-<td><input type="text"></td>
-</tr>
+<tr><td><b>USERNAME:</b></td><td><input type="text"></td></tr>
+<tr><td><b>FATHER NAME:</b></td><td><input type="text"></td></tr>
+<tr><td><b>MOTHER NAME:</b></td><td><input type="text"></td></tr>
+<tr><td><b>DATE OF BIRTH:</b></td><td><input type="date"></td></tr>
+<tr><td><b>GENDER:</b></td><td><input type="radio" name="gender"> Male 
+                               <input type="radio" name="gender"> Female</td></tr>
+<tr><td><b>DEPARTMENT:</b></td><td><input type="text"></td></tr>
+<tr><td><b>BLOOD GROUP:</b></td><td><input type="text"></td></tr>
+<tr><td><b>E-MAIL:</b></td><td><input type="email"></td></tr>
+<tr><td><b>COLLEGE NAME:</b></td><td><input type="text"></td></tr>
+<tr><td><b>PHONE NO:</b></td><td><input type="text"></td></tr>
+<tr><td><b>AADHAR NO:</b></td><td><input type="text"></td></tr>
 </table>
+
 <br>
-<a href="D:/leka/add/add.html" ><input type="button" value="Submit"></a>
-<input type="button" value="Cancel">
+
+<input type="button" value="Submit"
+       onclick="validateForm()"
+       onmouseenter="changeColor(this,'lightgreen')"
+       onmouseleave="resetColor(this)">
+
+<input type="button" value="Cancel"
+       onclick="window.location.href='file:///D:/leka/add/signin.html'"
+       onmouseenter="changeColor(this,'lightcoral')"
+       onmouseleave="resetColor(this)">
+
+<p id="msg" style="font-weight:bold; margin-top:10px;"></p>
+
 </form>
+
 </body>
 </html>
+
+
