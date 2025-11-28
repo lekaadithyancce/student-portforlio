@@ -16,10 +16,11 @@ This course helped me understand real-world applications of cloud technology and
 
 I would like to thank Simplilearn and Google Cloud for providing this valuable learning opportunity.
 Excited to continue learning and building new skills in cloud computing!</div>
-<button id="likeCount" onclick="likePost()">Like</button>
-<button onclick="prompt('Enter your comment:')">💬 Comment</button>
-<button onclick="alert('Shared!')"> Share</button>
-<button onclick="alert('Reposted!')">🔄 Repost</button><br><br>
+<button id="likeCount" onclick="likePost()">👍Like</button>
+<button id="shareMsg" onclick="sharePost()"> ➢Share</button>
+<button onclick="alert('Reposted!')">🔄 Repost</button>
+ <button id="showBtn" onclick="showInput()">💬Comment</button>
+ <p id="output"></p>
 </div>
 <img src="D:\leka\add\WhatsApp Image 2025-11-04 at 12.26.25_85b36381.jpg"height=50px width=50px>
 <div class="name"><b>Krishnakumar</b></div>
@@ -36,10 +37,11 @@ During the event, I developed a responsive portfolio website that showcased clea
 This experience helped me strengthen my front-end development skills and boosted my confidence in creating web pages from scratch. I’m grateful to my mentors and teammates for their constant support and encouragement.
 
 Excited to explore more web development challenges ahead!</div>
-<button id="likeCount1" onclick="likePost1()">Like</button>
-<button onclick="prompt('Enter your comment:')">💬 Comment</button>
-<button onclick="alert('Shared!')"> Share</button>
-<button onclick="alert('Reposted!')">🔄 Repost</button><br><br>
+<button id="likeCount1" onclick="likePost1()">👍Like </button>
+<button id="shareMsg1"onclick="sharePost1()"> ➢Share</button>
+<button onclick="alert('Reposted!')">🔄 Repost</button>
+ <button id="showBtn1" onclick="showInput1()">💬Comment</button>
+ <p id="output1"></p>
 </div>
 <script>
    let likes = 0;
@@ -52,6 +54,43 @@ function likePost() {
        likes1++;
        document.getElementById("likeCount1").innerText = "Likes: " + likes1;
 }
+function showInput() {
+      document.getElementById("showBtn").style.display = "none";
+      document.getElementById("output").innerHTML = 
+        '<input type="text" id="commentInput" placeholder="Write a comment">' +
+        '<button onclick="addComment()">Post</button>';
+    }
+
+    function addComment() {
+      var comment = document.getElementById("commentInput").value;
+
+      if (comment != "") {
+        document.getElementById("output").innerHTML += "<p>" + comment + "</p>";
+        document.getElementById("commentInput").value = "";
+      }
+    }
+	function showInput1() {
+      document.getElementById("showBtn1").style.display = "none";
+      document.getElementById("output1").innerHTML = 
+        '<input type="text" id="commentInput1" placeholder="Write a comment">' +
+        '<button onclick="addComment1()">Post</button>';
+    }
+
+    function addComment1() {
+      var comment1 = document.getElementById("commentInput1").value;
+
+      if (comment1 != "") {
+        document.getElementById("output1").innerHTML += "<p>" + comment + "</p>";
+        document.getElementById("commentInput1").value = "";
+      }
+    }
+
+    function sharePost() {
+      document.getElementById("shareMsg").innerText = "Post Shared Successfully!";
+    }
+	function sharePost1() {
+      document.getElementById("shareMsg1").innerText = "Post Shared Successfully!";
+    }
 </script>
 </body>
 </html>
