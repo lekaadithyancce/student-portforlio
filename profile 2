@@ -1,0 +1,68 @@
+<html>
+<head>
+<h2 align=center><u>PROFILE DETAILS</u></h2>
+</head>
+<body>
+<img src="D:\leka\add\WhatsApp Image 2025-11-12 at 10.12.33 AM.jpeg" onmouseenter="mouseEnter(this)"
+onmouseleave="mouseLeave(this)" height="50px">
+<h2></h2>
+<div style="border:2px solid black; width:300px; height:150px; padding:10px; background-color:lightblue;">
+<p>sri eshwar college of engineering<br>computer communication engineering<br>SSLC:93%<br>HSC:93%<br></p>  
+</div>
+<h3>phonenumber:9994346116<br>
+email:lekaadithyan@gmail.com<br>
+<a href=http://linkedin.com/in/leka-adithyan-4167b9381/></h3>
+linked in</a>
+<div class="section">
+<h2><u>POSTS</u></h2>
+<img src="D:\leka\add\WhatsApp Image 2025-11-12 at 10.12.33 AM.jpeg"height=200px width=200px><br>
+<button id="likeCount" onclick="likePost()">👍 Like</button>
+<button id="shareMsg" onclick="sharePost()"> ➢Share</button>
+<button onclick="alert('Reposted!')">🔄 Repost</button>
+</button><button id="showBtn" onclick="showInput()">💬Comment</button><p id="output"></p>
+no other Posts yet
+</div>
+<script>
+function mouseEnter(x){
+x.style.height="150px";
+y.style.height="150px";
+}
+function mouseLeave(x){
+x.style.height="100px";
+y.style.width="100px";
+}
+let likes = 0;
+function likePost() {
+      likes++;
+      document.getElementById("likeCount").innerText = "Likes: " + likes;
+    }
+ 
+	function showInput() {
+      document.getElementById("showBtn").style.display = "none";
+      document.getElementById("output").innerHTML = 
+        '<input type="text" id="commentInput" placeholder="Write a comment">' +
+        '<button onclick="addComment()">Post</button>';
+    }
+	function addComment() {
+      var comment = document.getElementById("commentInput").value;
+
+      if (comment != "") {
+        document.getElementById("output").innerHTML += "<p>" + comment + "</p>";
+        document.getElementById("commentInput").value = "";
+      }
+    }
+	function sharePost() {
+      document.getElementById("shareMsg").innerText = "Post Shared Successfully!";
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
