@@ -1,25 +1,46 @@
 <html>
 <head>
-<style>
-body{
-background:url("C:\Users\rupaa\Downloads\backgound.jpeg");
-
+<title>Sign In</title>
+<script>
+function saveData() {
+    let email = document.getElementById("email").value.trim();
+    let pass = document.getElementById("pass").value.trim();
+if (email === "" || pass === "") {
+    alert("Please fill all fields!");
+    return;
 }
 
-</style>
+localStorage.setItem("savedEmail", email);
+localStorage.setItem("savedPass", pass);
+
+alert("Account Created Successfully!");
+window.location.href = "D:/leka/add/login.html";
+}
+
+function changeColor(element, color) {
+element.style.backgroundColor = color;
+}
+
+function resetColor(element) {
+element.style.backgroundColor = "";
+} </script>
 </head>
 <body align="center">
-<h2> SIGNIN</h2>
-<img src="D:\leka\add\WhatsApp Image 2025-11-04 at 15.43.49_b1b9eb20.jpg"height=80px>
-<label> NAME:</label>
-<input type="text"><br>
-<img src="D:\leka\add\WhatsApp Image 2025-11-04 at 15.44.04_8cb361a8.jpg"height=80px>
-<label> E MAIL</label>
-<input type="text"><br>
-<img src="D:\leka\add\WhatsApp Image 2025-11-04 at 15.43.31_e0dea72d.jpg" height=80width=150px>
-<label> PASSWORD:</label>
-<input type="password"><br>
-<h5>if you already have an account click<a href="file:///D:/leka/add/logout.html"><input type="button" value="login"></a></h5>
-<h1> <a href="D:/leka/add/login.html" ><input type="button" style="font-size:20px"value="ENTER"></a></h1>
+<h2>SIGN IN</h2>
+
+<img src="D:/leka/add/WhatsApp Image 2025-11-04 at 15.44.04_8cb361a8.jpg" height="80px"> <label>EMAIL:</label> <input type="text" id="email"><br>
+<img src="D:/leka/add/WhatsApp Image 2025-11-04 at 15.43.31_e0dea72d.jpg" height="80px"> <label>PASSWORD:</label> <input type="password" id="pass" required><br>
+<h5>Already have an account?
+<a href="file:///D:/leka/add/logout.html">
+    <input type="button" value="LOGIN"
+           onmouseenter="changeColor(this,'lightgreen')"
+           onmouseleave="resetColor(this)">
+</a>
+</h5>
+<input type="button" style="font-size:20px" value="ENTER"
+    onclick="saveData()"
+    onmouseenter="changeColor(this,'lightgreen')"
+	onmouseleave="resetColor(this)">
+
 </body>
 </html>
